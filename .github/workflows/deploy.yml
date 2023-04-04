@@ -58,7 +58,7 @@ jobs:
         git config user.email "1256447387@qq.com"
         git add .
         git commit -m "GitHub Actions Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
-        git push --force --quiet "https://${{ secrets.ACCESS_TOKEN }}@$GITHUB_REPO" main:main
+        git push --force --quiet "https://${{ secrets.ACCESS_TOKEN }}@$GITHUB_REPO" master:main
 
 # git push --force --quiet "https://RoYFbFDSfM:${{ secrets.CODING_TOKEN }}@$CODING_REPO" main:main
 # git push --force --quiet "https://CZX-Yui:${{ secrets.GITEE_ACCESS_TOKEN }}@$GITEE_REPO" main:main
