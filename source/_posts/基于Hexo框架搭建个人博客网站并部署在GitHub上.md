@@ -225,9 +225,45 @@ deploy:
 
 TODO。。。
 
-### 7. 增加文章在线编辑功能
+### 7. 备份博客源码
 
+1. 新建github分支source，并设置为默认分支
 
+2. 在本地站点根目录初始化git仓库，创立source分支，删除public文件，主题文件夹里的.git文件，再将本地目录与远程仓库关联
+
+   ```
+   git init
+   git checkout -b source
+   hexo clean
+   git remote add origin https://github.com/CZX-Yui/CZX-Yui.github.io.git
+   ```
+
+3. 新建.gitignore，配置如下：
+
+   ```
+   .DS_Store
+   Thumbs.db
+   db.json
+   *.log
+   node_modules/
+   public/
+   .deploy*/
+   ```
+
+4. 推送三连：add、commit、push
+
+   ```
+   git add .
+   git commit -m 'hexo source post'
+   git push origin source
+   ```
+
+> [使用git分支保存hexo博客源码到github ](https://www.jianshu.com/p/8814ce1da7a4)
+
+### 8. 增加文章在线编辑功能
+
+- 需要先完成问题7（备份），因为需要先在github创立source分支。希望实现的流程是每次写完本地md，直接推送源码到git，使用git action自动部署，就不用本地做hexo d的操作了。
+- 
 
 > [Hexo 自动化部署在线编辑文章](https://blog.csdn.net/qq_51725966/article/details/128152299)
 
