@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.2k words
+          5.8k words
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          44 mins
+          49 mins
         
       </span>
     
@@ -480,8 +480,31 @@
 <figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs arcade">index_img: <span class="hljs-regexp">/images/i</span>ndex_img/index_img_x.png<br>banner_img: <span class="hljs-regexp">/images/</span>banner_img/banner_img_x.png<br></code></pre></td></tr></table></figure></li>
 </ul>
 <h3 id="6-hexo-new-page的作用是什么？"><a href="#6-hexo-new-page的作用是什么？" class="headerlink" title="6. hexo new page的作用是什么？"></a>6. hexo new page的作用是什么？</h3><p>TODO。。。</p>
-<h3 id="7-增加文章在线编辑功能"><a href="#7-增加文章在线编辑功能" class="headerlink" title="7. 增加文章在线编辑功能"></a>7. 增加文章在线编辑功能</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51725966/article/details/128152299">Hexo 自动化部署在线编辑文章</a></p>
+<h3 id="7-备份博客源码"><a href="#7-备份博客源码" class="headerlink" title="7. 备份博客源码"></a>7. 备份博客源码</h3><ol>
+<li><p>新建github分支source，并设置为默认分支</p>
+</li>
+<li><p>在本地站点根目录初始化git仓库，创立source分支，删除public文件，主题文件夹里的.git文件，再将本地目录与远程仓库关联</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs awk">git init<br>git checkout -b source<br>hexo clean<br>git remote add origin https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/CZX-Yui/</span>CZX-Yui.github.io.git<br></code></pre></td></tr></table></figure></li>
+<li><p>新建.gitignore，配置如下：</p>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs x86asm"><span class="hljs-meta">.DS_Store</span><br>Thumbs<span class="hljs-number">.</span><span class="hljs-built_in">db</span><br><span class="hljs-built_in">db</span><span class="hljs-number">.</span>json<br>*.log<br>node_modules/<br><span class="hljs-meta">public</span>/<br><span class="hljs-meta">.deploy</span>*/<br></code></pre></td></tr></table></figure></li>
+<li><p>推送三连：add、commit、push</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs gradle">git add .<br>git commit -m <span class="hljs-string">&#x27;hexo source post&#x27;</span><br>git <span class="hljs-keyword">push</span> origin <span class="hljs-keyword">source</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/8814ce1da7a4">使用git分支保存hexo博客源码到github </a></p>
+</blockquote>
+<h3 id="8-增加文章在线编辑功能"><a href="#8-增加文章在线编辑功能" class="headerlink" title="8. 增加文章在线编辑功能"></a>8. 增加文章在线编辑功能</h3><ul>
+<li>需要先完成问题7（备份），因为需要先在github创立source分支。希望实现的流程是每次写完本地md，直接推送源码到git，使用git action自动部署，就不用本地做<code>hexo d</code>的操作了。</li>
+<li>生成token（每30天需要更新一次）</li>
+<li>TODO</li>
+</ul>
+<blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51725966/article/details/128152299">Hexo 自动化部署在线编辑文章</a></li>
+<li>[使用 GitHub Actions 自动部署 Hexo 博客到 GitHub Pages - 知乎 (zhihu.com)</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/161969042">参考token生成</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.github.com/zh/actions/using-workflows/workflow-syntax-for-github-actions">GitHub Actions 的工作流语法 - GitHub 文档</a></li>
+</ul>
 </blockquote>
 <h1 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h1><h4 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h4><ul>
 <li><p><a target="_blank" rel="noopener" href="https://pages.github.com/">GitHub Pages</a></p>
