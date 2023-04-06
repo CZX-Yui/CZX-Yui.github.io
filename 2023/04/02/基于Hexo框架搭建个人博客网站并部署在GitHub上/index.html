@@ -24,8 +24,8 @@
 <meta property="og:description" content="摘要：记录第一次搭建个人博客的全过程，学会了简单的网页部署，搭建了一个十分舒服的知识管理系统，Nice！技术栈包括Hexo基本框架，Fluid主题，GitHub.io云端部署等">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://github.com/images/index_img/index_img_0.png">
-<meta property="article:published_time" content="2023-04-02T14:04:59.000Z">
-<meta property="article:modified_time" content="2023-04-03T07:09:09.000Z">
+<meta property="article:published_time" content="2023-04-02T22:04:59.000Z">
+<meta property="article:modified_time" content="2023-04-03T15:09:09.000Z">
 <meta property="article:author" content="CZX-Yui">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="GitHub">
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.8k words
+          7k words
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          49 mins
+          59 mins
         
       </span>
     
@@ -296,18 +296,18 @@
 <p>这周末花了两天时间，总算是搭建好了自己的博客系统，趁热打铁赶紧总结一波，作为本站的第一篇文章。我将先复盘搭建博客系统的全部配置细节，再总结日后使用的流水线操作方法。</p>
 <hr>
 <h1 id="一、博客系统配置"><a href="#一、博客系统配置" class="headerlink" title="一、博客系统配置"></a>一、博客系统配置</h1><p>我的需求一开始是想做一个知识汇总用的笔记软件，因为一直用的Notion，非常好用，但是怕毕业了没有学校的邮箱（可以免费用），而购买它的服务又太贵了（每个月5刀），而且总觉得自己的东西放在别人的平台上不太放心，万一哪天公司跑路了东西就都没了，而且人家还是个美国公司（虽然老板是华裔）。因此选择了博客这个平台来做知识管理，将每天的随笔、笔记什么的保留在互联网上，而且公开可见，万一做的好的话还能增加流量出个名什么的hhh（主要还是自己总结用啦）。</p>
-<p>调研了一下现有的搭建博客方案，一种方案是直接用现有平台的（CSDN、博客园、掘金、简书、知乎等等），比较方便，容易被搜索引擎搜到，但是功能较单一，扩展性差，风格固化，最不能忍受的是还有广告牛皮癣！而另一种方案是本地建站再部署到云端，DIY成分更多，但是难度也大，需要对全栈有个基本了解。以后我的目标是用方案二，但是现在初步入门还是先快速搭建出一个Demo较好（劝退警告），因此我选择的方案是介于两者之间的：<strong>本地采用md写作，再用博客生成框架直接转译成网站源码，再通过Github部署到云端。</strong></p>
+<p>调研了一下现有的搭建博客方案，一种方案是直接用现有平台的（CSDN、博客园、掘金、简书、知乎等等），比较方便，容易被搜索引擎搜到，但是功能较单一，扩展性差，风格固化，最不能忍受的是还有广告牛皮癣！而另一种方案是本地建站再部署到云端，DIY成分更多，但是难度也大，需要对全栈有个基本了解。以后我的目标是用方案二，但是现在初步入门还是先快速搭建出一个Demo较好（劝退警告），因此我选择的方案是介于两者之间的：<strong>本地采用md写作，再用博客生成框架直接转译成网站源码，再通过GitHub部署到云端。</strong></p>
 <p>三步流程的技术选型：</p>
 <ul>
 <li><p><strong>本地markdown写作</strong>：使用<strong>Typora</strong>，永久购买89元。（看到一句话被激励到，立刻购买了：你愿意花大几百去买游戏，却不愿意花几十块买个好用的生产力工具？）</p>
 </li>
-<li><p><strong>本地建站框架</strong>：其实最佳的建站方法是自己写网站代码，灵活度高，但是对新手不友好。因此这部分选择目前主流的“纯文本md转译为HTML的博客建站框架”，Github官方推荐的是Jekyll框架，尝试了下因为不方便修改风格而且教程较老就放弃了，目前选择的是<strong>Hexo</strong>框架，搭配开源主题插件<strong>Fluid</strong>，美&amp;爽！</p>
+<li><p><strong>本地建站框架</strong>：其实最佳的建站方法是自己写网站代码，灵活度高，但是对新手不友好。因此这部分选择目前主流的“纯文本md转译为HTML的博客建站框架”，GitHub官方推荐的是Jekyll框架，尝试了下因为不方便修改风格而且教程较老就放弃了，目前选择的是<strong>Hexo</strong>框架，搭配开源主题插件<strong>Fluid</strong>，美&amp;爽！</p>
 </li>
-<li><p><strong>云端部署</strong>：采用<strong>Github Pages</strong>功能。Github界面美观且功能强大，还提供了免费的网站部署（虽然资源受限，但是做个博客绰绰有余了）。</p>
+<li><p><strong>云端部署</strong>：采用<strong>GitHubPages</strong>功能。GitHub界面美观且功能强大，还提供了免费的网站部署（虽然资源受限，但是做个博客绰绰有余了）。</p>
 </li>
 </ul>
 <p>本地环境：基于Windows11系统，在LEGION2022-R7000笔电上安装，默认已配置好VPN（随时会用）</p>
-<h2 id="1-本地环境配置"><a href="#1-本地环境配置" class="headerlink" title="1. 本地环境配置"></a>1. 本地环境配置</h2><p>本地配置的目标是完成本地建站功能，至于部署到云端再到怎么能成功访问就是Github帮我们做好的事情了。因此需要配置用于本地建站的<strong>Node.js</strong>和用于Github部署的<strong>git</strong>。有了这个基础，再去安装博客转译框架<strong>Hexo</strong>。</p>
+<h2 id="1-本地环境配置"><a href="#1-本地环境配置" class="headerlink" title="1. 本地环境配置"></a>1. 本地环境配置</h2><p>本地配置的目标是完成本地建站功能，至于部署到云端再到怎么能成功访问就是GitHub帮我们做好的事情了。因此需要配置用于本地建站的<strong>Node.js</strong>和用于GitHub部署的<strong>git</strong>。有了这个基础，再去安装博客转译框架<strong>Hexo</strong>。</p>
 <ol>
 <li>安装<a target="_blank" rel="noopener" href="https://nodejs.org/en">Node.js</a></li>
 <li>安装<a target="_blank" rel="noopener" href="https://git-scm.com/">Git</a></li>
@@ -315,12 +315,8 @@
 </ol>
 <p>安装完成使用-v命令查看版本测试安装是否成功。注意查看Hexo版本必须在安装Hexo的目录下看（我的是MyBlog博客根目录），否则不显示Hexo的版本只显示hexo-cli的版本。</p>
 <blockquote>
-<ul>
-<li><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/#%E5%AE%89%E8%A3%85">Hexo官方教程（安装）</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1662732">Hexo博客详细教程（一）| 建立本地站点 - 腾讯云开发者社区 </a></p>
-</li>
-</ul>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/#%E5%AE%89%E8%A3%85">Hexo官方教程（安装）</a></p>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1662732">Hexo博客详细教程（一）| 建立本地站点 - 腾讯云开发者社区 </a></p>
 </blockquote>
 <h2 id="2-本地建站与项目文件说明"><a href="#2-本地建站与项目文件说明" class="headerlink" title="2. 本地建站与项目文件说明"></a>2. 本地建站与项目文件说明</h2><h3 id="建站流程"><a href="#建站流程" class="headerlink" title="建站流程"></a>建站流程</h3><h4 id="1-初始化站点"><a href="#1-初始化站点" class="headerlink" title="1. 初始化站点"></a>1. 初始化站点</h4><ol>
 <li>第一次建站，选择一个文件夹作为站点根目录，在终端打开，执行以下命令新建文件</li>
@@ -334,9 +330,7 @@
 </li>
 </ol>
 <blockquote>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/setup">Hexo官方教程（建站）</a></li>
-</ul>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/setup">Hexo官方教程（建站）</a></p>
 </blockquote>
 <h4 id="2-修改配置文件"><a href="#2-修改配置文件" class="headerlink" title="2. 修改配置文件"></a>2. 修改配置文件</h4><ol>
 <li><p>修改根目录下的_config.yml文件，这是站点全局配置文件。使用vscode打开，参考官方教程进行配置。</p>
@@ -345,19 +339,15 @@
 </li>
 </ol>
 <blockquote>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration">Hexo官方教程（配置）</a></li>
-<li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/front-matter">Front-matter | Hexo</a></li>
-</ul>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration">Hexo官方教程（配置）</a></p>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/front-matter">Front-matter | Hexo</a></p>
 </blockquote>
 <h4 id="3-更换主题"><a href="#3-更换主题" class="headerlink" title="3. 更换主题"></a>3. 更换主题</h4><p>默认的主题不好看，下载安装Fluid主题。参考官方文档进行配置。</p>
 <p>我用npm install方法将hexo-theme-fluid安装在node_module库中，并将其中的配置文件复制到根目录下_config.fluid.yml，在这里配置和主题相关的事项。</p>
 <p>主题文件夹里的source和根目录下的source在编译后会合并，因此保存图片优先放在根目录下的source的images文件夹里。</p>
 <blockquote>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/start/#%E4%B8%BB%E9%A2%98%E7%AE%80%E4%BB%8B">开始使用 | Hexo Fluid 用户手册 (fluid-dev.com)</a></li>
-<li><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/">配置指南 | Hexo Fluid 用户手册 (fluid-dev.com)</a></li>
-</ul>
+<p><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/start/#%E4%B8%BB%E9%A2%98%E7%AE%80%E4%BB%8B">开始使用 | Hexo Fluid 用户手册 (fluid-dev.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/">配置指南 | Hexo Fluid 用户手册 (fluid-dev.com)</a></p>
 </blockquote>
 <h3 id="项目文件组织说明"><a href="#项目文件组织说明" class="headerlink" title="项目文件组织说明"></a>项目文件组织说明</h3><p>项目文件组织如下：大部分都是配置文件，核心放md文档的文件只有source</p>
 <ul>
@@ -367,30 +357,47 @@
 <li>node_modules：node.js的lib库</li>
 <li>scaffolds：md文件的模板文件，新建post、page、draft会自动复制里面的模板。模板里只定义了yml头字段，部分自动写好（title、date），其余在写文章时需自行填写。每次新建md文件默认拷贝post.md，如果有什么需要通用的修改（关于Front-matter或者全文通用模板）可以直接修改该文件。</li>
 <li>public：<code>hexo g</code>后生成的网站文件，该文件夹可以单独拿出来，当作网站部署的源码</li>
-<li>.deploy_git：<code>hexo d</code>后生成的git部署文件，用于和github同步</li>
+<li>.deploy_git：<code>hexo d</code>后生成的git部署文件，用于和GitHub同步</li>
 <li>_config.yml：核心文件，全局配置</li>
 <li>_config.fluid.yml：核心文件，主题相关全局配置（我的主题名为fluid）</li>
 <li>.npmignore/package.json/package-lock.json/db.json：其余配置文件</li>
 </ul>
-<p><img src="/2023/04/02/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%9C%A8GitHub%E4%B8%8A/image-20230403114238355.png" srcset="/img/loading.gif" lazyload alt="项目文件组织"></p>
-<h2 id="3-同步-amp-部署到Github-io"><a href="#3-同步-amp-部署到Github-io" class="headerlink" title="3. 同步&amp;部署到Github.io"></a>3. 同步&amp;部署到Github.io</h2><ul>
-<li>初次使用：在github上建库，尾缀为.github.io</li>
+<p><img src="/../%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%9C%A8GitHub%E4%B8%8A/image-20230403114238355.png" srcset="/img/loading.gif" lazyload alt="项目文件组织"></p>
+<h2 id="3-远程部署到GitHub的两种方式"><a href="#3-远程部署到GitHub的两种方式" class="headerlink" title="3. 远程部署到GitHub的两种方式"></a>3. 远程部署到GitHub的两种方式</h2><ul>
+<li>初次使用：在GitHub上建库，尾缀为.github.io</li>
 <li>安装git部署插件：<code>npm install hexo-deployer-git --save</code></li>
-<li>全局配置文件_config.yml配置如下：<ul>
-<li>repo地址设置为ssh连接，因为之前设置了本地连github用的ssh密钥，这样比较稳定</li>
 </ul>
-</li>
-</ul>
+<h3 id="1-简易部署"><a href="#1-简易部署" class="headerlink" title="1. 简易部署"></a>1. 简易部署</h3><p>具体流程理解为：先在本地生成页面文件，存在public文件夹下，再将public文件夹同步到GitHub库的main分支上，并自动触发action的pages build and deployment流程</p>
+<ol>
+<li>将全局配置文件_config.yml配置如下：repo地址设置为ssh连接，因为之前设置了本地连GitHub用的ssh密钥，这样比较稳定</li>
+</ol>
 <figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">deploy:</span><br><span class="hljs-symbol">  type:</span> git<br><span class="hljs-symbol">  repo:</span> git@github.com:CZX-Yui/CZX-Yui.github.io.git<br><span class="hljs-symbol">  branch:</span> main<br></code></pre></td></tr></table></figure>
 
-<ul>
-<li>部署站点：<code>hexo d</code> </li>
-<li>刷新github可以看到已经被同步，再打开个人博客网站刷新即可更新（github部署较慢要等几分钟）</li>
-</ul>
+<ol start="2">
+<li><p>每次更新完后，在根目录下先<code>hexo clean</code>，再部署站点：<code>hexo d</code> </p>
+</li>
+<li><p>刷新GitHub可以看到已经被同步，再打开个人博客网站刷新即可更新（GitHub部署较慢要等几分钟）</p>
+</li>
+</ol>
 <blockquote>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1662782">Hexo博客教程（三）| Github、Coding 部署Hexo站点详解 - 腾讯云开发者社区</a></li>
-</ul>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1662782">Hexo博客教程（三）| Github、Coding 部署Hexo站点详解 - 腾讯云开发者社区</a></p>
+</blockquote>
+<h3 id="2-开辟新分支部署备份库（推荐）"><a href="#2-开辟新分支部署备份库（推荐）" class="headerlink" title="2. 开辟新分支部署备份库（推荐）"></a>2. 开辟新分支部署备份库（推荐）</h3><p>简易部署只将编译后的网页文件同步在GitHub库上，现在希望将源文件也同步在该库中。新建一个分支source来专门同步源文件。再利用action功能，每次push到source后触发，执行文件编译并部署。这种模式的好处在于可以在线修改文档再直接GitHub网站上提交，当手边的机器没有node、hexo环境时非常好用。</p>
+<ol>
+<li><p>在GitHub该库中新建分支source，并设置为默认分支</p>
+</li>
+<li><p>在本地站点根目录初始化git仓库，创立source分支，删除public文件、主题文件夹里的.git文件，再将本地目录与远程仓库关联（SSH关联）</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs stylus">git init<br>git checkout -<span class="hljs-selector-tag">b</span> source<br>hexo clean<br>git remote add origin git@github<span class="hljs-selector-class">.com</span>:CZX-Yui/CZX-Yui<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.io</span>.git<br></code></pre></td></tr></table></figure></li>
+<li><p>新建.gitignore，配置如下：</p>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs x86asm"><span class="hljs-meta">.DS_Store</span><br>Thumbs<span class="hljs-number">.</span><span class="hljs-built_in">db</span><br><span class="hljs-built_in">db</span><span class="hljs-number">.</span>json<br>*.log<br>node_modules/<br><span class="hljs-meta">public</span>/<br><span class="hljs-meta">.deploy</span>*/<br></code></pre></td></tr></table></figure></li>
+<li><p>在站点根目录下新建<code>.github/workflows/pages.yml</code>，添加内容如下，解释写在注释里</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">Pages</span><br><br><span class="hljs-attr">on:</span>                 <span class="hljs-comment"># 触发条件：push到分支source的时候</span><br>  <span class="hljs-attr">push:</span><br>    <span class="hljs-attr">branches:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">source</span> <span class="hljs-comment"># default branch</span><br><br><span class="hljs-attr">jobs:</span>               <span class="hljs-comment"># 触发后执行任务</span><br>  <span class="hljs-attr">pages:</span>			<span class="hljs-comment"># 任务名</span><br>    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span><br>    <span class="hljs-attr">permissions:</span><br>      <span class="hljs-attr">contents:</span> <span class="hljs-string">write</span><br>    <span class="hljs-attr">steps:</span>   									<span class="hljs-comment"># 任务步骤，每行-打头表示一个任务</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Use</span> <span class="hljs-string">Node.js</span> <span class="hljs-number">16.</span><span class="hljs-string">x</span><br>        <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/setup-node@v2</span><br>        <span class="hljs-attr">with:</span><br>          <span class="hljs-attr">node-version:</span> <span class="hljs-string">&quot;16.18.0&quot;</span>				<span class="hljs-comment"># 改成和本地环境一致</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Cache</span> <span class="hljs-string">NPM</span> <span class="hljs-string">dependencies</span><br>        <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/cache@v2</span><br>        <span class="hljs-attr">with:</span><br>          <span class="hljs-attr">path:</span> <span class="hljs-string">node_modules</span><br>          <span class="hljs-attr">key:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">runner.OS</span> <span class="hljs-string">&#125;&#125;-npm-cache</span><br>          <span class="hljs-attr">restore-keys:</span> <span class="hljs-string">|</span><br><span class="hljs-string">            $&#123;&#123; runner.OS &#125;&#125;-npm-cache</span><br><span class="hljs-string"></span>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Install</span> <span class="hljs-string">Dependencies</span><br>        <span class="hljs-attr">run:</span> <span class="hljs-string">npm</span> <span class="hljs-string">install</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Build</span><br>        <span class="hljs-attr">run:</span> <span class="hljs-string">npm</span> <span class="hljs-string">run</span> <span class="hljs-string">build</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Deploy</span><br>        <span class="hljs-attr">uses:</span> <span class="hljs-string">peaceiris/actions-gh-pages@v3</span><br>        <span class="hljs-attr">with:</span><br>          <span class="hljs-attr">github_token:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">secrets.GITHUB_TOKEN</span> <span class="hljs-string">&#125;&#125;</span><br>          <span class="hljs-attr">publish_branch:</span> <span class="hljs-string">main</span>						<span class="hljs-comment"># 部署到main节点，该节点同步页面文件</span><br>          <span class="hljs-attr">publish_dir:</span> <span class="hljs-string">./public</span>						<span class="hljs-comment"># 部署源文件的目录</span><br><br></code></pre></td></tr></table></figure></li>
+<li><p>推送三连：add、commit、push</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs gradle">git add .<br>git commit -m <span class="hljs-string">&#x27;hexo source post&#x27;</span><br>git <span class="hljs-keyword">push</span> origin <span class="hljs-keyword">source</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/github-pages.html">在 GitHub Pages 上部署 Hexo | Hexo</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/8814ce1da7a4">使用git分支保存hexo博客源码到github </a></p>
 </blockquote>
 <h1 id="二、新建博客流水线"><a href="#二、新建博客流水线" class="headerlink" title="二、新建博客流水线"></a>二、新建博客流水线</h1><ol>
 <li><p>进入<strong>本地站点根目录</strong><code>D:\Documents\Github.io\MyBlog</code> ，在终端中打开</p>
@@ -415,8 +422,10 @@
 </li>
 <li><p>（可选）本地发布测试：在终端执行 <code>hexo clean ; hexo g ; hexo s</code></p>
 </li>
-<li><p>部署到GitHub上：在终端执行<code>hexo clean ; hexo d</code></p>
+<li><p><del>（简易部署）部署到GitHub上：在终端执行<code>hexo clean ; hexo d</code></del></p>
 </li>
+<li><p>（备份部署）最好先在本地测试没问题了，再将源文件同步到GitHub，自动执行部署</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs armasm"><span class="hljs-symbol">git</span> <span class="hljs-keyword">add</span> .<br><span class="hljs-symbol">git</span> commit -m <span class="hljs-string">&quot;xxxx&quot;</span><br><span class="hljs-symbol">git</span> <span class="hljs-keyword">push</span> origin source<br></code></pre></td></tr></table></figure></li>
 </ol>
 <h1 id="三、其余细节问题"><a href="#三、其余细节问题" class="headerlink" title="三、其余细节问题"></a>三、其余细节问题</h1><h3 id="1-新建博客时命名注意"><a href="#1-新建博客时命名注意" class="headerlink" title="1. 新建博客时命名注意"></a>1. 新建博客时命名注意</h3><ul>
 <li>不要出现“+”号，否则会自动识别为“-”号，造成后续导入图片时与默认“typora-root-url”命名不符合。尽量命名不要出现特殊符号</li>
@@ -424,17 +433,15 @@
 <h3 id="2-Typora图片插入"><a href="#2-Typora图片插入" class="headerlink" title="2. Typora图片插入"></a>2. Typora图片插入</h3><ul>
 <li>本地插入图片时默认图片地址为“**/xxx.jpg**”，在官方<a href="https://github.com/hexojs/hexo-renderer-marked">hexo-renderer-marked</a>插件中存在bug，插件希望图片地址前面没有反斜杠“/”，因此不能识别到该地址出现bug。直接的解法是在每次插入图片后手动删掉反斜杠，但是太麻烦了。我尝试直接去node_modules源码里面修改，成功：hexo-renderer-marked/lib/<strong>renderer.js</strong>文件中，删掉下面标黄的部分，即允许文件名从“/”开头</li>
 </ul>
-<p><img src="/2023/04/02/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%9C%A8GitHub%E4%B8%8A/hexo%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E7%9A%84bug.png" srcset="/img/loading.gif" lazyload alt="hexo插入图片的bug"></p>
+<p><img src="/../%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%9C%A8GitHub%E4%B8%8A/hexo%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E7%9A%84bug.png" srcset="/img/loading.gif" lazyload alt="hexo插入图片的bug"></p>
 <ul>
 <li>图片中含有中文出错：在Typora偏好设置-&gt;图像，不要勾选插入时自动转译图像URL，否则会将中文转译成ASCII码，在Hexo插件转译路径时不匹配出错。</li>
 <li>（TODO）图片进行缩放出错：缩放后默认格式变化，Hexo插件识别不了，这个暂时没有解决</li>
 </ul>
 <blockquote>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders#%E4%BD%BF%E7%94%A8-Markdown-%E5%B5%8C%E5%85%A5%E5%9B%BE%E7%89%87">资源文件夹 | Hexo</a></li>
-<li>类似问题：<a href="https://github.com/hexojs/hexo-renderer-marked/issues/216">md img render part improvement of hexo-render-marked · Issue #216 · hexojs/hexo-renderer-marked (github.com)</a></li>
-<li><a target="_blank" rel="noopener" href="https://yinyoupoet.github.io/2019/09/03/hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">typora + hexo博客中插入图片 | yinyoupoet的博客</a></li>
-</ul>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders#%E4%BD%BF%E7%94%A8-Markdown-%E5%B5%8C%E5%85%A5%E5%9B%BE%E7%89%87">资源文件夹 | Hexo</a></p>
+<p>类似问题：<a href="https://github.com/hexojs/hexo-renderer-marked/issues/216">md img render part improvement of hexo-render-marked · Issue #216 ·</a></p>
+<p><a target="_blank" rel="noopener" href="https://yinyoupoet.github.io/2019/09/03/hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">typora + hexo博客中插入图片 | yinyoupoet的博客</a></p>
 </blockquote>
 <h3 id="3-部署github报错"><a href="#3-部署github报错" class="headerlink" title="3. 部署github报错"></a>3. 部署github报错</h3><ol>
 <li><p>上传出错</p>
@@ -447,10 +454,8 @@
 </li>
 </ol>
 <blockquote>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41256398/article/details/117994899">Hexo部署出现错误err: Error: Spawn failed解决方式</a></li>
-<li><a href="https://github.com/hexojs/hexo-deployer-git">hexojs/hexo-deployer-git: Git deployer plugin for Hexo. (github.com)</a></li>
-</ul>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41256398/article/details/117994899">Hexo部署出现错误err: Error: Spawn failed解决方式</a></p>
+<p><a href="https://github.com/hexojs/hexo-deployer-git">hexojs/hexo-deployer-git: Git deployer plugin for Hexo. (github.com)</a></p>
 </blockquote>
 <ol start="2">
 <li><p>部署出错</p>
@@ -481,29 +486,20 @@
 </ul>
 <h3 id="6-hexo-new-page的作用是什么？"><a href="#6-hexo-new-page的作用是什么？" class="headerlink" title="6. hexo new page的作用是什么？"></a>6. hexo new page的作用是什么？</h3><p>TODO。。。</p>
 <h3 id="7-备份博客源码"><a href="#7-备份博客源码" class="headerlink" title="7. 备份博客源码"></a>7. 备份博客源码</h3><ol>
-<li><p>新建github分支source，并设置为默认分支</p>
-</li>
-<li><p>在本地站点根目录初始化git仓库，创立source分支，删除public文件，主题文件夹里的.git文件，再将本地目录与远程仓库关联</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs awk">git init<br>git checkout -b source<br>hexo clean<br>git remote add origin https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/CZX-Yui/</span>CZX-Yui.github.io.git<br></code></pre></td></tr></table></figure></li>
-<li><p>新建.gitignore，配置如下：</p>
-<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs x86asm"><span class="hljs-meta">.DS_Store</span><br>Thumbs<span class="hljs-number">.</span><span class="hljs-built_in">db</span><br><span class="hljs-built_in">db</span><span class="hljs-number">.</span>json<br>*.log<br>node_modules/<br><span class="hljs-meta">public</span>/<br><span class="hljs-meta">.deploy</span>*/<br></code></pre></td></tr></table></figure></li>
-<li><p>推送三连：add、commit、push</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs gradle">git add .<br>git commit -m <span class="hljs-string">&#x27;hexo source post&#x27;</span><br>git <span class="hljs-keyword">push</span> origin <span class="hljs-keyword">source</span><br></code></pre></td></tr></table></figure></li>
+<li></li>
 </ol>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/8814ce1da7a4">使用git分支保存hexo博客源码到github </a></p>
-</blockquote>
 <h3 id="8-增加文章在线编辑功能"><a href="#8-增加文章在线编辑功能" class="headerlink" title="8. 增加文章在线编辑功能"></a>8. 增加文章在线编辑功能</h3><ul>
 <li>需要先完成问题7（备份），因为需要先在github创立source分支。希望实现的流程是每次写完本地md，直接推送源码到git，使用git action自动部署，就不用本地做<code>hexo d</code>的操作了。</li>
 <li>生成token（每30天需要更新一次）</li>
 <li>TODO</li>
 </ul>
 <blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51725966/article/details/128152299">Hexo 自动化部署在线编辑文章</a></p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51725966/article/details/128152299">Hexo 自动化部署在线编辑文章</a></li>
-<li>[使用 GitHub Actions 自动部署 Hexo 博客到 GitHub Pages - 知乎 (zhihu.com)</li>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/161969042">参考token生成</a></li>
-<li><a target="_blank" rel="noopener" href="https://docs.github.com/zh/actions/using-workflows/workflow-syntax-for-github-actions">GitHub Actions 的工作流语法 - GitHub 文档</a></li>
+<li><p>[使用 GitHub Actions 自动部署 Hexo 博客到 GitHub Pages - 知乎 (zhihu.com)</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/161969042">参考token生成</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.github.com/zh/actions/using-workflows/workflow-syntax-for-github-actions">GitHub Actions 的工作流语法 - GitHub 文档</a></p>
+</li>
 </ul>
 </blockquote>
 <h1 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h1><h4 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h4><ul>
@@ -519,14 +515,11 @@
 </li>
 <li><p>搭建过程中遇到问题主要还是参考官方文档的说明，相比于到处找帖子而且说的都不一样，官方文档会及时更新，有啥bug都会及时修正。因为这个框架也算是各个玩家们的作品，少有盈利组织在专门运维，有点bug很正常。</p>
 </li>
-<li><p>常常遇到本地建站测试没问题，一部署到github就会出现问题，这时开源打开F12debug，一般是链接出错。</p>
+<li><p>常常遇到本地建站测试没问题，一部署到GitHub就会出现问题，这时开源打开F12debug，一般是链接出错。</p>
 </li>
 </ul>
 
                 
-              </div>
-              <div style="text-align: center "> 
-                <a href="https://github.com/CZX-Yui/CZX-Yui.github.io//page.month/page.day/基于Hexo框架搭建个人博客网站并部署在GitHub上" target="_blank">编辑文章✏</a> 
               </div>
             
             <hr/>
