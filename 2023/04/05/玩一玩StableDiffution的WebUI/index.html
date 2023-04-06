@@ -16,12 +16,12 @@
   <meta name="author" content="CZX-Yui">
   <meta name="keywords" content="">
   
-    <meta name="description" content="摘要：此处限制100个汉字">
+    <meta name="description" content="摘要：本地Win11下部署Stable Diffusion模型，通过WebUI控制文本生成图片">
 <meta property="og:type" content="article">
 <meta property="og:title" content="玩一玩StableDiffution的WebUI">
 <meta property="og:url" content="https://github.com/CZX-Yui/2023/04/05/%E7%8E%A9%E4%B8%80%E7%8E%A9StableDiffution%E7%9A%84WebUI/index.html">
 <meta property="og:site_name" content="YuiのBlog">
-<meta property="og:description" content="摘要：此处限制100个汉字">
+<meta property="og:description" content="摘要：本地Win11下部署Stable Diffusion模型，通过WebUI控制文本生成图片">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://github.com/images/index_img/index_img_1.png">
 <meta property="article:published_time" content="2023-04-04T17:25:14.000Z">
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.4k words
+          2.5k words
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          21 mins
+          22 mins
         
       </span>
     
@@ -277,15 +277,9 @@
             
               <div class="markdown-body">
                 
-                <p>摘要：此处限制100个汉字</p>
+                <p>摘要：本地Win11下部署Stable Diffusion模型，通过WebUI控制文本生成图片</p>
 <span id="more"></span>
 
-
-
-<ul>
-<li>SD模型源码地址：<a href="https://github.com/CompVis/stable-diffusion">CompVis/stable-diffusion: A latent text-to-image diffusion model (github.com)</a></li>
-<li>SD_WebUI项目地址：<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">AUTOMATIC1111/stable-diffusion-webui: Stable Diffusion web UI (github.com)</a></li>
-</ul>
 <hr>
 <p>现在是2023年4月，基于Diffusion的AI生成图片模型的效能已经远超基于GAN的生成模型，目前主流的产品包括OpenAI的DALL·E2（2022.4）、某个小组织开发的MidJourney（2022.4）、开源的Stable Diffusion（2022.7）。三者在具体实现原理、作图风格等上都略有不同。作为一个刚接触该领域的萌新，我就想找一个较成熟的产品体验一下，最好该产品能开源代码方便DIY，而DALL·E2直接闭源，MidJourney还要基于他们的社交聊天软件才能用，于是果断选择Stable Diffusion作为我入门的第一步。</p>
 <p>初次体验先试试大佬们基于Stable Diffusion做的一个WebUI控制台。其实现逻辑是：<strong>先下载开源的预训练模型，在本地部署，通过WebUI界面来操作。</strong>相比于MidJourney等在线作图的方式，在本地部署一套环境可以无视生成数量的限制，自由度高，但是对本机配置较高，要体验不同风格的模型还需预先下载（模型大到以GB为单位）。</p>
@@ -307,7 +301,7 @@
 <li>查看本机GPU驱动版本，去官网下载匹配的版本的CUDA</li>
 <li>安装后在NVIDIA控制面板查看CUDA版本</li>
 </ol>
-<p><img src="/2023/04/05/%E7%8E%A9%E4%B8%80%E7%8E%A9StableDiffution%E7%9A%84WebUI/image-20230405100324214.png" srcset="/img/loading.gif" lazyload alt="image-20230405100324214"></p>
+<p><img src="/2023/04/05/%E7%8E%A9%E4%B8%80%E7%8E%A9StableDiffution%E7%9A%84WebUI/image-20230405100324214.png" srcset="/img/loading.gif" lazyload alt="NVIDIA系统信息"></p>
 <h2 id="4-克隆stable-diffusion-WebUI库"><a href="#4-克隆stable-diffusion-WebUI库" class="headerlink" title="4. 克隆stable diffusion WebUI库"></a>4. 克隆stable diffusion WebUI库</h2><ol>
 <li><p>在希望克隆的文件夹下打开CMD</p>
 </li>
@@ -329,12 +323,14 @@
 <li>执行<code>webui-user.bat</code>，浏览器打开<code>http://127.0.0.1:7860</code> 。（注意关掉梯子）</li>
 </ol>
 <p>（3. 完整执行<code>.\webui.bat --medvram --xformers</code>）</p>
-<h2 id="2-参考CIVITAI"><a href="#2-参考CIVITAI" class="headerlink" title="2. 参考CIVITAI"></a>2. 参考CIVITAI</h2><p>​    选择参考的图片，复制其promot信息到UI中</p>
+<h1 id="三、提示词promot"><a href="#三、提示词promot" class="headerlink" title="三、提示词promot"></a>三、提示词promot</h1><h2 id="1-语法"><a href="#1-语法" class="headerlink" title="1. 语法"></a>1. 语法</h2><h2 id="2-参考其他开源模板"><a href="#2-参考其他开源模板" class="headerlink" title="2. 参考其他开源模板"></a>2. 参考其他开源模板</h2><p>​    如Civitai网站。选择参考的图片，复制其promot信息到UI中</p>
 <blockquote>
 <ul>
+<li><a target="_blank" rel="noopener" href="https://www.ptsearch.info/articles/list_best/">Prompt Search</a></li>
 <li><a target="_blank" rel="noopener" href="https://civitai.com/models/7240/meinamix">MeinaMix</a>: 二次元风格</li>
 </ul>
 </blockquote>
+<h1 id="四、controlnet"><a href="#四、controlnet" class="headerlink" title="四、controlnet"></a>四、controlnet</h1><p>Controlnet 允许通过线稿、动作识别、深度信息等对生成的图像进行控制。 </p>
 <h1 id="报错记录"><a href="#报错记录" class="headerlink" title="报错记录"></a>报错记录</h1><ul>
 <li>不管什么操作都会报错：<code>Something went wrong Expecting value: line 1 column 1 (char 0)</code></li>
 </ul>
@@ -362,8 +358,9 @@
 <p>​    GPU性能不够，将<code>Upscale by</code>设置为1，图片size最高支持到512x1024</p>
 <h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><blockquote>
 <ul>
+<li>SD模型源码地址：<a href="https://github.com/CompVis/stable-diffusion">CompVis/stable-diffusion: A latent text-to-image diffusion model (github.com)</a></li>
+<li>SD_WebUI项目地址：<a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">AUTOMATIC1111/stable-diffusion-webui: Stable Diffusion web UI (github.com)</a></li>
 <li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzI2NTQ0MjY5Nw==&mid=2247484745&idx=1&sn=2c4ae77c2138d561b45de5f4002d2b77&chksm=ea9c01afddeb88b92ffbec68c7badf6e0836f43977650c0bbb3eeb04ca1adfbe3ac43a2de28d&scene=21#wechat_redirect">如何用AI绘图画出超真实的小姐姐？</a></li>
-<li></li>
 </ul>
 </blockquote>
 
