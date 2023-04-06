@@ -264,6 +264,7 @@ TODO。。。
 
 - 需要先完成问题7（备份），因为需要先在github创立source分支。希望实现的流程是每次写完本地md，直接推送源码到git，使用git action自动部署，就不用本地做`hexo d`的操作了。
 - 生成token（每30天需要更新一次）
+- TODO
 
 > - [Hexo 自动化部署在线编辑文章](https://blog.csdn.net/qq_51725966/article/details/128152299)
 > - [使用 GitHub Actions 自动部署 Hexo 博客到 GitHub Pages - 知乎 (zhihu.com)
