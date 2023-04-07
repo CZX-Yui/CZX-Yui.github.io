@@ -1,6 +1,6 @@
 ---
 title: 基于Hexo框架搭建个人博客网站并部署在GitHub上
-typora-root-url: ./基于Hexo框架搭建个人博客网站并部署在GitHub上/
+
 date: 2023-04-02 22:04:59
 updated: 2023-04-03 15:09:09
 tags: 
@@ -10,7 +10,7 @@ categories:
 - web_dev
 index_img: /images/index_img/index_img_0.png
 banner_img: /images/banner_img/banner_img_0.png
-
+typora-root-url: ./基于Hexo框架搭建个人博客网站并部署在GitHub上
 ---
 
 摘要：记录第一次搭建个人博客的全过程，学会了简单的网页部署，搭建了一个十分舒服的知识管理系统，Nice！技术栈包括Hexo基本框架，Fluid主题，GitHub.io云端部署等
@@ -274,10 +274,11 @@ deploy:
 - 本地插入图片时默认图片地址为“**/xxx.jpg**”，在官方[hexo-renderer-marked](https://github.com/hexojs/hexo-renderer-marked)插件中存在bug，插件希望图片地址前面没有反斜杠“/”，因此不能识别到该地址出现bug。直接的解法是在每次插入图片后手动删掉反斜杠，但是太麻烦了。我尝试直接去node_modules源码里面修改，成功：hexo-renderer-marked/lib/**renderer.js**文件中，删掉下面标黄的部分，即允许文件名从“/”开头
 
 
-![hexo插入图片的bug](/hexo插入图片的bug.png)
+![hexo插入图片的bug](hexo插入图片的bug.png)
 
 - 图片中含有中文出错：在Typora偏好设置->图像，不要勾选插入时自动转译图像URL，否则会将中文转译成ASCII码，在Hexo插件转译路径时不匹配出错。
 - （TODO）图片进行缩放出错：缩放后默认格式变化，Hexo插件识别不了，这个暂时没有解决
+- 0406发现新BUG：用同步GitHub源文件在自动部署的方法，GitHub的安装包没有修改该BUG，还是会
 
 > [资源文件夹 | Hexo](https://hexo.io/zh-cn/docs/asset-folders#使用-Markdown-嵌入图片)
 >
