@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.5k words
+          2.9k words
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          22 mins
+          25 mins
         
       </span>
     
@@ -289,7 +289,7 @@
 <h1 id="一、-本地环境配置"><a href="#一、-本地环境配置" class="headerlink" title="一、 本地环境配置"></a>一、 本地环境配置</h1><h2 id="1-配置Python环境"><a href="#1-配置Python环境" class="headerlink" title="1. 配置Python环境"></a>1. 配置Python环境</h2><ol>
 <li><p>安装conda：直接上miniconda</p>
 </li>
-<li><p>创建虚拟环境，并激活进入</p>
+<li><p>创建虚拟环境，并激活进入（我的是sdwebui）</p>
 </li>
 <li><p>升级pip包，更改下载地址为清华镜像站</p>
 </li>
@@ -320,10 +320,21 @@
 </blockquote>
 <h1 id="二、WebUI操作指南"><a href="#二、WebUI操作指南" class="headerlink" title="二、WebUI操作指南"></a>二、WebUI操作指南</h1><h2 id="1-开启server流程："><a href="#1-开启server流程：" class="headerlink" title="1. 开启server流程："></a>1. 开启server流程：</h2><ol>
 <li>在项目根目录下<code>E:\Stable_Diffusion_WebUI\stable-diffusion-webui</code>打开CMD，进入虚拟环境<code>sdwebui</code></li>
-<li>执行<code>webui-user.bat</code>，浏览器打开<code>http://127.0.0.1:7860</code> 。（注意关掉梯子）</li>
+<li>执行<code>webui-user.bat</code>，浏览器打开<code>http://127.0.0.1:7860</code> 。（注意关掉梯子）<ul>
+<li>建议完整执行<code>.\webui.bat --medvram --xformers</code></li>
+</ul>
+</li>
 </ol>
-<p>（3. 完整执行<code>.\webui.bat --medvram --xformers</code>）</p>
-<h1 id="三、提示词promot"><a href="#三、提示词promot" class="headerlink" title="三、提示词promot"></a>三、提示词promot</h1><h2 id="1-语法"><a href="#1-语法" class="headerlink" title="1. 语法"></a>1. 语法</h2><h2 id="2-参考其他开源模板"><a href="#2-参考其他开源模板" class="headerlink" title="2. 参考其他开源模板"></a>2. 参考其他开源模板</h2><p>​    如Civitai网站。选择参考的图片，复制其promot信息到UI中</p>
+<h2 id="2-WebUI界面说明"><a href="#2-WebUI界面说明" class="headerlink" title="2. WebUI界面说明"></a>2. WebUI界面说明</h2><p>自己摸索</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/619120794">Stable Diffusion 新手入门手册</a></p>
+</blockquote>
+<h1 id="三、promot“咒语”大全"><a href="#三、promot“咒语”大全" class="headerlink" title="三、promot“咒语”大全"></a>三、promot“咒语”大全</h1><h2 id="1-语法"><a href="#1-语法" class="headerlink" title="1. 语法"></a>1. 语法</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/619120794">Stable Diffusion 新手入门手册</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/577238010">Stable Diffusion使用入门与提示词技巧</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv19903784">【AI绘画】全网 Stable Diffusion Prompt运用技巧</a>](<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/577238010">https://zhuanlan.zhihu.com/p/577238010</a>)</p>
+</blockquote>
+<h2 id="2-参考其他开源模板"><a href="#2-参考其他开源模板" class="headerlink" title="2. 参考其他开源模板"></a>2. 参考其他开源模板</h2><p>​    如Civitai网站。选择参考的图片，复制其promot信息到UI中</p>
 <blockquote>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://www.ptsearch.info/articles/list_best/">Prompt Search</a></li>
@@ -331,6 +342,15 @@
 </ul>
 </blockquote>
 <h1 id="四、controlnet"><a href="#四、controlnet" class="headerlink" title="四、controlnet"></a>四、controlnet</h1><p>Controlnet 允许通过线稿、动作识别、深度信息等对生成的图像进行控制。 </p>
+<p>（TODO）</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/619120794">Stable Diffusion 新手入门手册</a></p>
+</blockquote>
+<h1 id="五、本地训练新风格模型"><a href="#五、本地训练新风格模型" class="headerlink" title="五、本地训练新风格模型"></a>五、本地训练新风格模型</h1><blockquote>
+<p>开源Git库：<a href="https://github.com/bmaltais/kohya_ss">bmaltais/kohya_ss (github.com)</a></p>
+<p>低秩分解？<a href="https://github.com/KohakuBlueleaf/LyCORIS">KohakuBlueleaf/LyCORIS: Lora beYond Conventional methods, Other Rank adaptation Implementations for Stable diffusion. (github.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/619120794">Stable Diffusion 新手入门手册</a></p>
+</blockquote>
 <h1 id="报错记录"><a href="#报错记录" class="headerlink" title="报错记录"></a>报错记录</h1><ul>
 <li>不管什么操作都会报错：<code>Something went wrong Expecting value: line 1 column 1 (char 0)</code></li>
 </ul>
