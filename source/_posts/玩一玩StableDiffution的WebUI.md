@@ -37,7 +37,7 @@ typora-root-url: ./玩一玩StableDiffution的WebUI
 
 1. 安装conda：直接上miniconda
 
-2. 创建虚拟环境，并激活进入
+2. 创建虚拟环境，并激活进入（我的是sdwebui）
 3. 升级pip包，更改下载地址为清华镜像站
 
 ## 2. 配置Git
@@ -76,18 +76,25 @@ typora-root-url: ./玩一玩StableDiffution的WebUI
 
 1. 在项目根目录下`E:\Stable_Diffusion_WebUI\stable-diffusion-webui`打开CMD，进入虚拟环境`sdwebui`
 2. 执行`webui-user.bat`，浏览器打开`http://127.0.0.1:7860` 。（注意关掉梯子）
+   - 建议完整执行`.\webui.bat --medvram --xformers`
 
-（3. 完整执行`.\webui.bat --medvram --xformers`）
+## 2. WebUI界面说明
 
+自己摸索
 
+> [Stable Diffusion 新手入门手册](https://zhuanlan.zhihu.com/p/619120794)
 
-
-
-# 三、提示词promot
+# 三、promot“咒语”大全
 
 ## 1. 语法
 
 
+
+> [Stable Diffusion 新手入门手册](https://zhuanlan.zhihu.com/p/619120794)
+>
+> [Stable Diffusion使用入门与提示词技巧](https://zhuanlan.zhihu.com/p/577238010)
+>
+> [【AI绘画】全网 Stable Diffusion Prompt运用技巧](https://www.bilibili.com/read/cv19903784)](https://zhuanlan.zhihu.com/p/577238010)
 
 
 
@@ -106,9 +113,19 @@ typora-root-url: ./玩一玩StableDiffution的WebUI
 
 Controlnet 允许通过线稿、动作识别、深度信息等对生成的图像进行控制。 
 
+（TODO）
+
+> [Stable Diffusion 新手入门手册](https://zhuanlan.zhihu.com/p/619120794)
+
+# 五、本地训练新风格模型
 
 
 
+> 开源Git库：[bmaltais/kohya_ss (github.com)](https://github.com/bmaltais/kohya_ss)
+>
+> 低秩分解？[KohakuBlueleaf/LyCORIS: Lora beYond Conventional methods, Other Rank adaptation Implementations for Stable diffusion. (github.com)](https://github.com/KohakuBlueleaf/LyCORIS)
+>
+> [Stable Diffusion 新手入门手册](https://zhuanlan.zhihu.com/p/619120794)
 
 # 报错记录
 
