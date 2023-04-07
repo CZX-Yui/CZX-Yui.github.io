@@ -10,6 +10,7 @@ tags:
 - Stable_Diffusion
 categories:
 - AIGC
+typora-root-url: ./玩一玩StableDiffution的WebUI
 ---
 
 
@@ -48,7 +49,7 @@ categories:
 1. 查看本机GPU驱动版本，去官网下载匹配的版本的CUDA
 2. 安装后在NVIDIA控制面板查看CUDA版本
 
-![NVIDIA系统信息](/image-20230405100324214.png)
+![NVIDIA系统信息](image-20230405100324214.png)
 
 ## 4. 克隆stable diffusion WebUI库
 
