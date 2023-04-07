@@ -337,22 +337,11 @@ TODO。。。
 ### 7. 增加文章在线编辑功能
 
 - 需要先完成备份部署的配置。希望实现的流程是每次写完本地md，直接推送源码到git，使用git action自动部署，就不用本地做`hexo d`的操作了。
-- 生成token（每30天需要更新一次）
-- TODO
-
-> [Hexo 自动化部署在线编辑文章](https://blog.csdn.net/qq_51725966/article/details/128152299)
->
-> - [使用 GitHub Actions 自动部署 Hexo 博客到 GitHub Pages - 知乎 (zhihu.com)
->
->   [参考token生成](https://zhuanlan.zhihu.com/p/161969042)
+- （TODO）还是GitHub action的问题，yml配置的问题
 
 ### 8. 新环境下拉取GitHub并部署环境
 
-当换主机时，
-
-### 9. bug记录
-
-用新的部署方式是，图片链接出错
+（TODO）当换主机时。。。
 
 
 
