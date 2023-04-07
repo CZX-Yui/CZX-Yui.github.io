@@ -221,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k words
+          2k words
         
       </span>
     
@@ -232,7 +232,7 @@
         
         
         
-          14 mins
+          17 mins
         
       </span>
     
@@ -278,10 +278,21 @@
                 <p>摘要：学习Git的基本用法，发掘内部原理，理解与GitHub的关联流程，以及优雅地解决连接GitHub失败的问题</p>
 <span id="more"></span>
 
-<h1 id="一、Git本地操作与内部原理"><a href="#一、Git本地操作与内部原理" class="headerlink" title="一、Git本地操作与内部原理"></a>一、Git本地操作与内部原理</h1><ul>
-<li>git本地操作原理</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/96631135">这才是真正的Git——Git内部原理揭秘！ - 知乎 (zhihu.com)</a></p>
+<h1 id="一、Git本地操作与内部原理"><a href="#一、Git本地操作与内部原理" class="headerlink" title="一、Git本地操作与内部原理"></a>一、Git本地操作与内部原理</h1><h2 id="1-init、add、commit背后的原理"><a href="#1-init、add、commit背后的原理" class="headerlink" title="1. init、add、commit背后的原理"></a>1. init、add、commit背后的原理</h2><ol>
+<li><code>git init</code> ：拿到一个新文件夹，希望将其交给git管理，在该目录下执行init，创建一个.git文件夹，里面即存储文件及对应版本信息</li>
+<li><code>git add xxx.txt</code>：将一个txt文件纳入当前版本的管控之下。git会计算该文件的SHA1值做该文件及该版本的唯一<strong>身份证</strong>，当修改该文件后，这个SHA1值就变更了，对git来说就是一个新文件。</li>
+<li><code>git commit</code>：首先将当前版本的所有文件的目录结构做一个<strong>快照</strong>，记录每个文件的权限、文件名、SHA1值等；然后新建一个commit节点指向该快照，这个节点记录了本次提交的信息（快照的SHA1值）、上次commit的信息（便于回溯）、备注等。</li>
+</ol>
+<blockquote>
+<p>本质上git仓库就是<strong>一个key-value的数据库加上默克尔树形成的有向无环图（DAG）</strong></p>
+</blockquote>
+<blockquote>
+<p>可视化：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/96631135">这才是真正的Git——Git内部原理揭秘！</a></p>
+<p><a target="_blank" rel="noopener" href="https://marklodato.github.io/visual-git-guide/index-zh-cn.html#basic-usage">图解Git (marklodato.github.io)</a></p>
+</blockquote>
+<h2 id="2-操作指南"><a href="#2-操作指南" class="headerlink" title="2. 操作指南"></a>2. 操作指南</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600">Git教程 - 廖雪峰的官方网站 (liaoxuefeng.com)</a></p>
+</blockquote>
 <h1 id="二、关联远程仓库GitHub"><a href="#二、关联远程仓库GitHub" class="headerlink" title="二、关联远程仓库GitHub"></a>二、关联远程仓库GitHub</h1><h2 id="1-关联远程仓库"><a href="#1-关联远程仓库" class="headerlink" title="1. 关联远程仓库"></a>1. 关联远程仓库</h2><p>git和GitHub是两回事，git是本地版本控制软件，GitHub是远程版本控制仓库。通俗理解就是，git安装在本地，权力范围只有本地被初始化git的文件夹，而GitHub存在在云端（且往往是分布式，可能在存在在好几个人的电脑上），只是个任人进出的仓库。</p>
 <h3 id="先本地创建仓库，再关联到云端"><a href="#先本地创建仓库，再关联到云端" class="headerlink" title="先本地创建仓库，再关联到云端"></a>先本地创建仓库，再关联到云端</h3><ul>
 <li>准备好本地仓库，在某个文件夹下执行<code>git init</code></li>
