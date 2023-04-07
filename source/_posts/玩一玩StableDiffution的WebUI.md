@@ -1,6 +1,6 @@
 ---
 title: 玩一玩StableDiffution的WebUI
-typora-root-url: ./玩一玩StableDiffution的WebUI/
+
 index_img: /images/index_img/index_img_1.png
 banner_img: /images/banner_img/banner_img_1.png
 date: 2023-04-05 01:25:14

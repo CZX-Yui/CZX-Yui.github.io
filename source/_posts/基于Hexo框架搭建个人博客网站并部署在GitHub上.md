@@ -113,7 +113,7 @@ $ npm install
 - _config.fluid.yml：核心文件，主题相关全局配置（我的主题名为fluid）
 - .npmignore/package.json/package-lock.json/db.json：其余配置文件
 
-![项目文件组织](/../基于Hexo框架搭建个人博客网站并部署在GitHub上/image-20230403114238355.png)
+![项目文件组织](/image-20230403114238355.png)
 
 ## 3. 远程部署到GitHub的两种方式
 
@@ -211,8 +211,6 @@ deploy:
    
    ```
 
-   
-
 5. 推送三连：add、commit、push
 
    ```
@@ -224,6 +222,8 @@ deploy:
 > [在 GitHub Pages 上部署 Hexo | Hexo](https://hexo.io/zh-cn/docs/github-pages.html)
 >
 > [使用git分支保存hexo博客源码到github ](https://www.jianshu.com/p/8814ce1da7a4)
+>
+> [GitHub Actions 的工作流语法 - GitHub 文档](https://docs.github.com/zh/actions/using-workflows/workflow-syntax-for-github-actions)
 
 
 
@@ -274,7 +274,7 @@ deploy:
 - 本地插入图片时默认图片地址为“**/xxx.jpg**”，在官方[hexo-renderer-marked](https://github.com/hexojs/hexo-renderer-marked)插件中存在bug，插件希望图片地址前面没有反斜杠“/”，因此不能识别到该地址出现bug。直接的解法是在每次插入图片后手动删掉反斜杠，但是太麻烦了。我尝试直接去node_modules源码里面修改，成功：hexo-renderer-marked/lib/**renderer.js**文件中，删掉下面标黄的部分，即允许文件名从“/”开头
 
 
-![hexo插入图片的bug](/../基于Hexo框架搭建个人博客网站并部署在GitHub上/hexo插入图片的bug.png)
+![hexo插入图片的bug](/hexo插入图片的bug.png)
 
 - 图片中含有中文出错：在Typora偏好设置->图像，不要勾选插入时自动转译图像URL，否则会将中文转译成ASCII码，在Hexo插件转译路径时不匹配出错。
 - （TODO）图片进行缩放出错：缩放后默认格式变化，Hexo插件识别不了，这个暂时没有解决
@@ -333,14 +333,9 @@ deploy:
 
 TODO。。。
 
-### 7. 备份博客源码
+### 7. 增加文章在线编辑功能
 
-1. 
-
-
-### 8. 增加文章在线编辑功能
-
-- 需要先完成问题7（备份），因为需要先在github创立source分支。希望实现的流程是每次写完本地md，直接推送源码到git，使用git action自动部署，就不用本地做`hexo d`的操作了。
+- 需要先完成备份部署的配置。希望实现的流程是每次写完本地md，直接推送源码到git，使用git action自动部署，就不用本地做`hexo d`的操作了。
 - 生成token（每30天需要更新一次）
 - TODO
 
@@ -349,10 +344,14 @@ TODO。。。
 > - [使用 GitHub Actions 自动部署 Hexo 博客到 GitHub Pages - 知乎 (zhihu.com)
 >
 >   [参考token生成](https://zhuanlan.zhihu.com/p/161969042)
->
->   [GitHub Actions 的工作流语法 - GitHub 文档](https://docs.github.com/zh/actions/using-workflows/workflow-syntax-for-github-actions)
 
+### 8. 新环境下拉取GitHub并部署环境
 
+当换主机时，
+
+### 9. bug记录
+
+用新的部署方式是，图片链接出错
 
 
 
