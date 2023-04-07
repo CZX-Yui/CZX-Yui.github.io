@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          7.1k words
+          7.3k words
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          59 mins
+          61 mins
         
       </span>
     
@@ -362,7 +362,7 @@
 <li>_config.fluid.yml：核心文件，主题相关全局配置（我的主题名为fluid）</li>
 <li>.npmignore/package.json/package-lock.json/db.json：其余配置文件</li>
 </ul>
-<p><img src="/image-20230403114238355.png" srcset="/img/loading.gif" lazyload alt="项目文件组织"></p>
+<p><img src="/2023/04/02/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%9C%A8GitHub%E4%B8%8A/image-20230403114238355.png" srcset="/img/loading.gif" lazyload alt="项目文件组织"></p>
 <h2 id="3-远程部署到GitHub的两种方式"><a href="#3-远程部署到GitHub的两种方式" class="headerlink" title="3. 远程部署到GitHub的两种方式"></a>3. 远程部署到GitHub的两种方式</h2><ul>
 <li>初次使用：在GitHub上建库，尾缀为.github.io</li>
 <li>安装git部署插件：<code>npm install hexo-deployer-git --save</code></li>
@@ -411,9 +411,9 @@
 </li>
 <li><p>插入图片时：</p>
 <ul>
-<li><p>本地图片：可以直接copy进来</p>
+<li><p>本地图片：直接copy进来，修改路径只保留图片名（若要在Typora里显示就改“格式–图像–设置图像根目录”）</p>
 </li>
-<li><p>网络图片：复制图片链接，写一段插入图片地md语法</p>
+<li><p>网络图片：复制图片链接，写一段插入图片的md语法</p>
 </li>
 </ul>
 </li>
@@ -432,13 +432,13 @@
 <li>不要出现“+”号，否则会自动识别为“-”号，造成后续导入图片时与默认“typora-root-url”命名不符合。尽量命名不要出现特殊符号</li>
 </ul>
 <h3 id="2-Typora图片插入"><a href="#2-Typora图片插入" class="headerlink" title="2. Typora图片插入"></a>2. Typora图片插入</h3><ul>
-<li>本地插入图片时默认图片地址为“**/xxx.jpg**”，在官方<a href="https://github.com/hexojs/hexo-renderer-marked">hexo-renderer-marked</a>插件中存在bug，插件希望图片地址前面没有反斜杠“/”，因此不能识别到该地址出现bug。直接的解法是在每次插入图片后手动删掉反斜杠，但是太麻烦了。我尝试直接去node_modules源码里面修改，成功：hexo-renderer-marked/lib/<strong>renderer.js</strong>文件中，删掉下面标黄的部分，即允许文件名从“/”开头</li>
+<li>本地插入图片时默认图片地址为“**/xxx.jpg**”，在官方<a href="https://github.com/hexojs/hexo-renderer-marked">hexo-renderer-marked</a>插件中存在bug，插件希望图片地址前面没有反斜杠“/”，因此不能识别到该地址出现bug。直接的解法是在每次插入图片后手动删掉反斜杠，但是太麻烦了。我尝试直接去node_modules源码里面修改，成功：hexo-renderer-marked/lib/<strong>renderer.js</strong>文件中，删掉下面标黄的部分，即允许文件名从“/”开头。</li>
 </ul>
 <p><img src="/2023/04/02/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%9C%A8GitHub%E4%B8%8A/hexo%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E7%9A%84bug.png" srcset="/img/loading.gif" lazyload alt="hexo插入图片的bug"></p>
 <ul>
 <li>图片中含有中文出错：在Typora偏好设置-&gt;图像，不要勾选插入时自动转译图像URL，否则会将中文转译成ASCII码，在Hexo插件转译路径时不匹配出错。</li>
 <li>（TODO）图片进行缩放出错：缩放后默认格式变化，Hexo插件识别不了，这个暂时没有解决</li>
-<li>0406发现新BUG：用同步GitHub源文件在自动部署的方法，GitHub的安装包没有修改该BUG，还是会</li>
+<li>0406发现新BUG：用同步GitHub源文件再自动部署的方法，GitHub的在线环境没有修改该BUG，还是会出现图片路径转译出错的问题。即上述解法只适用于本地调试好、再hexo d部署的方式，而且上述解法中默认地址为“xxx.jpg”是因为在typora里设置图片的根目录为md同名文件夹了，每次都要设置太麻烦。所以最优解法还是每次插入图片后都改一下图片路径，只保留图片名称。若要在Typora里显示，就改图片根目录</li>
 </ul>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders#%E4%BD%BF%E7%94%A8-Markdown-%E5%B5%8C%E5%85%A5%E5%9B%BE%E7%89%87">资源文件夹 | Hexo</a></p>
