@@ -20,15 +20,21 @@ categories:
 
 # 一、Git本地操作与内部原理
 
-- git本地操作原理
+## 1. init、add、commit背后的原理
 
-[这才是真正的Git——Git内部原理揭秘！ - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/96631135)
+1. `git init` ：拿到一个新文件夹，希望将其交给git管理，在该目录下执行init，创建一个.git文件夹，里面即存储文件及对应版本信息
+2. `git add xxx.txt`：将一个txt文件纳入当前版本的管控之下。git会计算该文件的SHA1值做该文件及该版本的唯一**身份证**，当修改该文件后，这个SHA1值就变更了，对git来说就是一个新文件。
+3. `git commit`：首先将当前版本的所有文件的目录结构做一个**快照**，记录每个文件的权限、文件名、SHA1值等；然后新建一个commit节点指向该快照，这个节点记录了本次提交的信息（快照的SHA1值）、上次commit的信息（便于回溯）、备注等。
 
+> 本质上git仓库就是**一个key-value的数据库加上默克尔树形成的有向无环图（DAG）**
 
+> 可视化：[这才是真正的Git——Git内部原理揭秘！](https://zhuanlan.zhihu.com/p/96631135)
+>
+> [图解Git (marklodato.github.io)](https://marklodato.github.io/visual-git-guide/index-zh-cn.html#basic-usage)
 
+## 2. 操作指南
 
-
-
+> [Git教程 - 廖雪峰的官方网站 (liaoxuefeng.com)](https://www.liaoxuefeng.com/wiki/896043488029600)
 
 
 
