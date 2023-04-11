@@ -341,7 +341,8 @@ TODO。。。
 
 ### 8. 新环境下拉取GitHub并部署环境
 
-（TODO）当换主机时。。。
+- 新建文件夹，在该目录下启动Git Bash
+- 直接拉取个人账户下的github.io项目，source分支
 
 
 
